@@ -1,0 +1,10 @@
+# intelliJ IDEA files
+.idea/*
+*.iml
+
+# all hidden files
+.*
+
+#exclude
+!.gitignore
+!.gitattributes
