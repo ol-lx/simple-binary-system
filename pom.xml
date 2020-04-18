@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.simple.binary.system</groupId>
-    <artifactId>simple-binary-system</artifactId>
+    <artifactId>cranberry</artifactId>
     <version>${revision}${sha1}${changelist}</version>
-    <name>cranberry</name>
+    <name>simple-binary-system</name>
     <description>
-        The cranberry is a java library that allows to write less code - it's automatically
-        plugs into your project build and sweets up your java.
+        The simple binary system is a simple realisation java of the binary numerical system. This allows
+        to manipulate of binary digits and bit logical operations.
     </description>
     <url>https://github.com/ololx/${project.name}</url>
     <inceptionYear>2019</inceptionYear>
