@@ -6,44 +6,96 @@
 
     <groupId>org.simple.binary.system</groupId>
     <artifactId>simple-binary-system</artifactId>
-    <version>00.00.0000</version>
-
-    <name>Simple Binary System</name>
-    <description>The simple realisation of binary numerical system</description>
-    <url>https://bitbucket.org/ol_lx/simple-binary-math/src/master/</url>
+    <version>${revision}${sha1}${changelist}</version>
+    <name>cranberry</name>
+    <description>
+        The cranberry is a java library that allows to write less code - it's automatically
+        plugs into your project build and sweets up your java.
+    </description>
+    <url>https://github.com/ololx/${project.name}</url>
     <inceptionYear>2019</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>https://github.com/ololx/${project.name}/LICENSE</url>
+        </license>
+    </licenses>
 
     <developers>
         <developer>
             <name>Alexander A. Kropotin</name>
+            <email>ololx@icloud.com</email>
+            <roles>
+                <role>initial work</role>
+                <role>author</role>
+                <role>developer</role>
+            </roles>
         </developer>
     </developers>
 
+    <packaging>jar</packaging>
+
     <properties>
+        <!--<project versioning-->
+        <revision>0.1.0</revision>
+        <changelist></changelist>
+        <sha1/>
+        <!--project versioning>-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.11</java.version>
+        <java.version>1.9</java.version>
         <junit-jupiter.version>5.5.2</junit-jupiter.version>
     </properties>
 
     <dependencies>
-        <!--<Test-->
+        <!--<test-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-->Test-->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!--test/>-->
     </dependencies>
 
     <build>
         <plugins>
+            <!--<compiler-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <!--compiler>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                <configuration>
+                    <includes>
+                        <include>**Test*</include>
+                    </includes>
+                    <excludes>
+                        <exclude></exclude>
+                    </excludes>
+                    <excludedGroups></excludedGroups>
                 </configuration>
             </plugin>
         </plugins>
